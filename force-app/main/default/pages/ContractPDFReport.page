@@ -1,0 +1,31 @@
+<apex:page controller="ContractPDFController">
+    <apex:form>
+        <!-- Display any error messages -->
+        <apex:pageMessages />
+
+        <apex:pageBlock title="Send Report to Customer">
+            <apex:pageBlockSection title="Customer and Contact Info">
+                <apex:pageBlockSectionItem>
+                    <p><strong>Contact Name:</strong> {!contact.Name}</p>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem>
+                    <p><strong>Contact Email:</strong> {!contact.Email}</p>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem>
+                    <p><strong>Contract Number:</strong> {!contract.ContractNumber}</p>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Message">
+                <apex:inputText label="Subject" value="{!emailSubject}" id="emailSubject" required="true"/>
+                <apex:inputTextarea label="Body" value="{!emailBody}" id="emailBody" style="width: 300px; height: 100px" required="true"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Send Email" action="{!sendEmail}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>      
+    </apex:form>
+</apex:page>
+

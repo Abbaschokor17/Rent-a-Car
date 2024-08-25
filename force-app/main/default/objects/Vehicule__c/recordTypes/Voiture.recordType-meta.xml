@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voiture</fullName>
+    <active>true</active>
+    <label>Voiture</label>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>BMW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Citroen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mercerdes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peugeot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toyota</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

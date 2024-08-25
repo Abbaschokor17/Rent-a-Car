@@ -1,0 +1,76 @@
+<apex:page controller="ContractPDFController" renderAs="pdf">
+    
+
+    <h1>Contract Report</h1>
+    
+    <h2>Contract Details</h2>
+    <table>
+        <tr>
+            <th>Contract Number</th>
+            <td>{!contract.ContractNumber}</td>
+        </tr>
+        <tr>
+            <th>Account Name</th>
+            <td>{!contract.Account.Name}</td>
+        </tr>
+        <tr>
+            <th>Start Date</th>
+            <td>{!formattedStartDate}</td>
+        </tr>
+        <tr>
+            <th>End Date</th>
+            <td>{!formattedEndDate}</td>
+        </tr>
+        <tr>
+            <th>Number of rented vehicles</th>
+            <td>{!contract.Nombre_de_Vehicules__c}</td>
+        </tr>
+        <tr>
+            <th>Total Price</th>
+            <td>{!contract.Total_Contract_Period_Price__c} €</td>
+                </tr>
+    </table>
+    <h2>Signature Details</h2>
+    <table>
+        <tr>
+            <th>Customer Signed Name</th>
+            <td>{!contact.Name}</td>
+            
+        </tr>
+        <tr>
+            <th>Customer Signed Date</th>
+            <td>{!FCuSD}</td>
+        </tr>
+        <tr>
+            <th>Company Signed Name</th>
+            <td>{!companySignedName}</td>
+        </tr>
+        <tr>
+            <th>Company Signed Date</th>
+            <td>{!FCoSD}</td>
+        </tr>
+
+    </table>
+
+    <h2>Rental Car Details</h2>
+    <table>
+        <tr>
+            <th>Rental Number</th>
+            <th>Rental Price per day</th>
+            <th>Vehicle Name</th>
+            <th>Vehicle Color</th>
+            <th>Model Year</th>
+            <th>Type</th>
+        </tr>
+        <apex:repeat value="{!locations}" var="loc">
+            <tr>
+                <td>{!loc.Name}</td>
+                <td>{!loc.Rental_price__c} €</td>
+                <td>{!loc.Vehicule__r.Name}</td>
+                <td>{!loc.Vehicule__r.Color__c}</td>
+                <td>{!loc.Vehicule__r.Model_year__c}</td>
+                <td>{!loc.Vehicule__r.Type__c}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>  
